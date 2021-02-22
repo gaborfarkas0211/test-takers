@@ -17,15 +17,14 @@
 <script>
 import instance from "../instance.js";
 export default {
-  data() {
-    return {
-      file: null,
-      message: "",
-    };
-  },
+  data: () => ({
+    file: null,
+    message: "",
+  }),
 
   methods: {
     fileUpload() {
+      let loader = this.$loading.show();
       const type = "application/vnd.ms-excel";
       if (this.file.type == type) {
         let formData = new FormData();
@@ -39,15 +38,21 @@ export default {
           })
           .then((response) => {
             this.file = null;
-            this.makeToast();
+            this.$notify({
+              type: "success",
+              text: "The file successfully uploaded.",
+            });
+          })
+          .catch(() => {
+            this.$notify({
+              type: "error",
+              text: "The file could not upload.",
+            });
+          })
+          .then(() => {
+            loader.hide();
           });
       }
-    },
-    makeToast() {
-      this.$bvToast.toast(`This is toast number`, {
-        title: "BootstrapVue Toast",
-        autoHideDelay: 5000,
-      });
     },
   },
 };
