@@ -6,7 +6,18 @@ export default {
   props: ["items"],
   data: () => ({
     chartData: {},
-    colors: ["#696969", "#bada55", "#7fe5f0", "#ff80ed", "#407294", "#cbcba9", "#420420", "#133337", "#5ac18e", "#ffa500"], 
+    colors: [
+      "#696969",
+      "#bada55",
+      "#7fe5f0",
+      "#ff80ed",
+      "#407294",
+      "#cbcba9",
+      "#420420",
+      "#133337",
+      "#5ac18e",
+      "#ffa500",
+    ],
     options: {
       responsive: true,
       maintainAspectRatio: false,
@@ -23,7 +34,7 @@ export default {
     },
   }),
   watch: {
-    chartData(to, from) {
+    chartData() {
       this.renderChart(this.chartData, this.options);
     },
     items() {
