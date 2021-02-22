@@ -5,12 +5,11 @@
       v-model="file"
       :state="Boolean(file)"
       placeholder="Choose a csv file or drop it here..."
-      drop-placeholder="Drop file here..."
-      ref="file"
+      drop-placeholder="Drop csv file here..."
     ></b-form-file>
-    <div class="mt-3">Selected file: {{ file ? file.name : "" }}</div>
-    <b-button @click="fileUpload" :disabled="file == null">Upload</b-button>
-    {{ message }}
+    <div class="pt-2">
+      <b-button @click="fileUpload" :disabled="file == null">Upload</b-button>
+    </div>
   </div>
 </template>
 
@@ -19,7 +18,6 @@ import instance from "../instance.js";
 export default {
   data: () => ({
     file: null,
-    message: "",
   }),
 
   methods: {

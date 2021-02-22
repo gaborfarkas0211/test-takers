@@ -91,14 +91,13 @@
       </template>
     </b-table>
     <b-row>
-      <b-col sm="12" offset-lg="3">
+      <b-col md="6" offset-md="3">
         <b-pagination
           v-show="items.length"
           v-model="currentPage"
           :total-rows="items.length"
           :per-page="perPage"
           align="fill"
-          size="md"
           class="my-0"
         ></b-pagination>
       </b-col>
@@ -119,10 +118,10 @@ export default {
     currentPage: 1,
     perPage: 10,
     fields: [
-      { key: "testTaker" },
-      { key: "correctAnswers" },
-      { key: "incorrectAnswers" },
-      { key: "actions", label: "" },
+      { key: "testTaker", tdClass: "align-middle" },
+      { key: "correctAnswers", tdClass: "align-middle" },
+      { key: "incorrectAnswers", tdClass: "align-middle" },
+      { key: "actions", label: "", tdClass: "align-middle" },
     ],
     form: {
       testTaker: "",

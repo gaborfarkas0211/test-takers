@@ -22,6 +22,8 @@ class RestController extends Controller
                 'class' => \yii\filters\Cors::className(),
                 'cors' => [
                     'Origin' => ['*'],
+                    'Access-Control-Request-Method' => ['GET', 'POST', 'DELETE'],
+                    'Access-Control-Allow-Headers' => ['Content-Type'],
                 ]
             ],
         ];
