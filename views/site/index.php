@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application Vue';
+$this->title = 'Test Takers';
 ?>
 <div class="site-index">
     <app></app>

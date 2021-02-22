@@ -28,7 +28,7 @@ $config = [
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
-            'errorAction' => 'api/site/error',
+            'errorAction' => 'site/error',
         ],
         'log' => [
             'traceLevel' => 0,
