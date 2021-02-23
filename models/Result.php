@@ -30,8 +30,8 @@ class Result extends \yii\db\ActiveRecord
         return [
             [['testTaker', 'correctAnswers', 'incorrectAnswers'], 'required'],
             [['correctAnswers', 'incorrectAnswers'], 'integer'],
-            [['testTaker'], 'string', 'max' => 255],
-            ['testTaker', 'match', 'pattern' => '/^([0-9]{2})-([0-9]{3})-([0-9]{4})/'],
+            [['testTaker'], 'string', 'max' => 11],
+            ['testTaker', 'match', 'pattern' => '/^([0-9]{2})-([0-9]{3})-([0-9]{4}$)/'],
             ['testTaker', 'unique']
         ];
     }
